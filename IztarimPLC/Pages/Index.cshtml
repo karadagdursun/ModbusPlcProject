@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <img src="https://www.iztarim.com.tr/theme/images/logo.svg" />
+    <h1 class="display-4">Süt Fabrikası Test Uygulaması</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">ASP.NET Core İle geliştirildi.</a>.</p>
+    <h2>Modbus Register Verileri</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Register Adresi</th>
+                <th>Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.RegisterValues.Count; i++)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@Model.RegisterValues[i]</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
